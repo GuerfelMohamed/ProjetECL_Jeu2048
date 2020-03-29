@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 # This file is used to ignore files which are generated
 # ----------------------------------------------------------------------------
 
@@ -73,6 +74,8 @@ Thumbs.db
 *.exe
 
 =======
+=======
+>>>>>>> 388b82ad5f06a11480590a4f02cab4ffde87bbe9
 # C++ objects and libs
 *.slo
 *.lo
@@ -125,4 +128,7 @@ compile_commands.json
 
 # QtCreator local machine specific files for imported projects
 *creator.user*
+<<<<<<< HEAD
+>>>>>>> 388b82ad5f06a11480590a4f02cab4ffde87bbe9
+=======
 >>>>>>> 388b82ad5f06a11480590a4f02cab4ffde87bbe9
