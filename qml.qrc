@@ -1,5 +1,8 @@
 <RCC>
     <qresource prefix="/">
         <file>main.qml</file>
+        <file>Cellule.qml</file>
+        <file>Grille.qml</file>
+        <file>Menu.qml</file>
     </qresource>
 </RCC>
