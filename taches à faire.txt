@@ -1,0 +1,23 @@
+fonction pour gerer le score
+fonction pour sauvegarder les etapes (liste de matrrice peut etre)
+fonction pour quitter
+fonction pour nouvelle partie
+fonction pour best (creer une liste de score associé à chaque partie)
+fonction/classe pour la communication entre QML & C++
+structure de la grille: matrice de taille modifiable ( sinon autres idées)
+logique du jeu, ie: haut bas droite gauche fusion
+fonctions/variable de test pour les "cellules" associé à la matrice
+fonctions/tests gagné et perdu
+
+// d'autres classes à définir si besoin
+
+// documntation pour le moment (à rajouter si utile)
+
+
+https://doc.qt.io/archives/qt-4.8/qml-repeater.html
+https://doc.qt.io/qt-5/qml-qtqml-qtobject.html
+https://doc.qt.io/qt-5/qobject.html
+https://doc.qt.io/qt-5/qml-qtquick-grid.html
+https://doc.qt.io/qt-5/qtquick-modelviewsdata-cppmodels.html
+https://doc.qt.io/qt-5/qabstractlistmodel.html
+https://doc.qt.io/qt-5/qtqml-cppintegration-interactqmlfromcpp.html
