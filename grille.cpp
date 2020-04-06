@@ -1,6 +1,10 @@
 #include "grille.h"
 
-grille::grille()
-{
+#include <iostream>
+using namespace std;
 
+Grille::Grille(QObject *parent) :
+    QObject(parent) {
+    init_rand();
+    debut_jeu();
 }
