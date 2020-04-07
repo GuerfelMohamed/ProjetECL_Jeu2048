@@ -45,15 +45,6 @@ Rectangle {
 
     Text {
         text: modelgrille.get_text
-        /*{
-            if (modelgrille.a_gagne) {
-                return "YOU WIN !"
-            } else if (modelgrille.finJeu) {
-                return "GAME OVER";
-            } else {
-                return "";
-            }
-        }*/
         font.pointSize: 40
         anchors.fill: parent
         verticalAlignment: Text.AlignVCenter

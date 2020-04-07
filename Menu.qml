@@ -65,7 +65,6 @@ Item {
 
         Text {
             id: best
-//            text: qsTr("Text")
             text: modelgrille.get_best_score
             anchors.fill: parent
             font.pixelSize: 20
