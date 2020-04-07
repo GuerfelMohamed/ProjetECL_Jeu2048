@@ -1,6 +1,5 @@
 #include "modelgrille.h"
 
-modelgrille::modelgrille()
-{
-
-}
+modelgrille::modelgrille(QObject *parent) :
+    QAbstractListModel(parent)
+{}
