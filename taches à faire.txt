@@ -23,8 +23,10 @@ The roles of a QAbstractItemModel subclass can be exposed to QML by reimplementi
 
 Here is an application with a QAbstractListModel subclass named AnimalModel, which exposes the type and sizes roles. It reimplements QAbstractItemModel::roleNames() to expose the role names, so that they can be accessed via QML:
       """
-
-
+comminucation entre le Qml et c++
+-----> solution trouvé: * Q_INVOKE pour lancer des méthodes c++ quand un bouton QML est cliqué.
+                        * Q_PROPERTY pour synchroniser des attributes c++ avec des QML property.
+ 
 https://doc.qt.io/archives/qt-4.8/qml-repeater.html
 https://doc.qt.io/qt-5/qml-qtqml-qtobject.html
 https://doc.qt.io/qt-5/qobject.html
