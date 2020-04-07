@@ -33,7 +33,7 @@ Item {
 
         Text {
             id: score
-            text: qsTr("Text")//get_score
+            text: modelgrille.get_score
             anchors.fill: parent
             verticalAlignment: Text.AlignVCenter
             horizontalAlignment: Text.AlignHCenter
@@ -65,7 +65,8 @@ Item {
 
         Text {
             id: best
-            text: qsTr("Text")//get_best
+//            text: qsTr("Text")
+            text: modelgrille.get_best_score
             anchors.fill: parent
             font.pixelSize: 20
             verticalAlignment: Text.AlignVCenter
@@ -84,7 +85,6 @@ Item {
         font.pixelSize: 24
         verticalAlignment: Text.AlignVCenter
         horizontalAlignment: Text.AlignHCenter
-
     }
 
     Button {
@@ -97,9 +97,9 @@ Item {
         anchors.bottomMargin: 389
         anchors.left: parent.left
         anchors.leftMargin: 8
-        onClicked:{
-            //trois();
-
+        onClicked: {
+            modelgrille.chgt_Taille(3);
+            modelgrille.nouvelle_partie();
         }
     }
 
@@ -111,8 +111,8 @@ Item {
         height: 70
         text: qsTr("4x4")
         onClicked:{
-            //quatre();
-
+            modelgrille.chgt_Taille(4);
+            modelgrille.nouvelle_partie();
         }
     }
 
@@ -123,9 +123,9 @@ Item {
         width: 120
         height: 70
         text: qsTr("5x5")
-        onClicked:{
-            //cinq();
-
+        onClicked: {
+            modelgrille.chgt_Taille(5);
+            modelgrille.nouvelle_partie();
         }
     }
 
@@ -137,8 +137,7 @@ Item {
         height: 70
         text: qsTr("RETOUR")
         onClicked:{
-            //retour();
-
+            modelgrille.charger_historique_grille();
         }
     }
 
@@ -148,10 +147,9 @@ Item {
         y: 325
         width: 120
         height: 70
-        text: qsTr("NOUVELLE PARTIE")
+        text: qsTr("NOUVELLE\n    PARTIE")
         onClicked:{
-            //newGame();
-
+            modelgrille.nouvelle_partie();
         }
     }
 

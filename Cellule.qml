@@ -5,8 +5,9 @@ Rectangle {
 
     id: tile
     property string value: ""
-    property int size: 88
+    property int size: {(400/modelgrille.get_Taille)-12}
     property int taillePolice: 15
+
     width: size
     height: size
 
@@ -29,49 +30,49 @@ Rectangle {
         },
     State{
             name:"2"
-            PropertyChanges{target : tile; color: "#e1d2c4"}
+            PropertyChanges{target : tile; color: "#eee4da";}
         },
     State{
             name:"4"
-            PropertyChanges{target : tile; color: "#e9dbb8"}
+            PropertyChanges{target : tile; color: "#eae0c8";}
         },
     State{
             name:"8"
-            PropertyChanges{target : tile; color: "#ea9366"}
+            PropertyChanges{target : tile; color: "#f59563";}
         },
 
     State{
             name:"16"
-            PropertyChanges{target : tile; color: "#f16c34"}
+            PropertyChanges{target : tile; color: "#f8804e";}
         },
 
     State{
             name:"32"
-            PropertyChanges{target : tile; color: "#d44c12"}
+            PropertyChanges{target : tile; color: "#e86127";}
         },
     State{
             name:"64"
-            PropertyChanges{target : tile; color: "#b62d00"}
+            PropertyChanges{target : tile; color: "#f14208";}
         },
     State{
             name:"128"
-            PropertyChanges{target : tile; color: "#f4e776"}
+            PropertyChanges{target : tile; color: "#f9ee8c";}
         },
     State{
             name:"256"
-            PropertyChanges{target : tile; color: "#e4d135"}
+            PropertyChanges{target : tile; color: "#f3e56f";}
         },
     State{
             name:"512"
-            PropertyChanges{target : tile; color: "#e3cf0f"}
+            PropertyChanges{target : tile; color: "#eddb3a";}
         },
     State{
             name:"1024"
-            PropertyChanges{target : tile; color: "#cfbb05"}
+            PropertyChanges{target : tile; color: "#f3dc0c";}
         },
     State{
             name:"2048"
-            PropertyChanges{target : tile; color: "#eb2525"}
+            PropertyChanges{target : tile; color: "#fbc401";}
         }
 
     ]

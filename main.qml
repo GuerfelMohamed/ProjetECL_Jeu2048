@@ -5,7 +5,7 @@ Window {
     visible: true
     width: 720
     height: 480
-    color: "#d3f1f5"
+    color: "#f8c77a"
     title: qsTr("Jeu 2048")
 
     Grille {
