@@ -10,7 +10,7 @@ Pour lancer le programme en utilisant Qt Creator, suivez les étapes suivantes :
 
 2- Ouvrez le logiciel Qt Creator et cliquez sur "Ouvrir projet"
 
-3- Selectionnez le fichier "2048.pro"
+3- Ouvrez le fichier "2048.pro" avec Qt
 
 4- Avec le projet ouvert, construisez le projet: i.e. run (bouton vert) (ou ctrl + R)
 
