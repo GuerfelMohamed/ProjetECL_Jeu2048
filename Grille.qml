@@ -19,10 +19,10 @@ Rectangle {
     focus: true
 
     Keys.onPressed: {
-        if (event.key==Qt.Key_Up) {/*Key UP clicked movment*/}
-        if (event.key==Qt.Key_Right) {/* Key Right movment*/}
-        if (event.key==Qt.Key_Left) {/* Key Left movement*/}
-        if (event.key==Qt.Key_Down) {/*Key Down movement*/}
+        if (event.key===Qt.Key_Up) {/*Key UP clicked movment*/}
+        if (event.key===Qt.Key_Right) {/* Key Right movment*/}
+        if (event.key===Qt.Key_Left) {/* Key Left movement*/}
+        if (event.key===Qt.Key_Down) {/*Key Down movement*/}
     }
 
 
