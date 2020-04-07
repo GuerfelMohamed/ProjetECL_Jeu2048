@@ -12,7 +12,7 @@ Pour lancer le programme en utilisant Qt Creator, suivez les étapes suivantes :
 
 3- Selectionnez le fichier "2048.pro"
 
-4- Avec le projet ouvert, construisez le projet: ie run (bouton vert) (ou ctrl + R)
+4- Avec le projet ouvert, construisez le projet: i.e. run (bouton vert) (ou ctrl + R)
 
 5- Jouez !
 

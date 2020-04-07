@@ -34,7 +34,7 @@ Rectangle {
         spacing: 10
 
         Repeater {
-            model: {/*model of Grid here ??!*/}
+            model: {/*model of Grid here ??!-> une sorte d'objet qui a une relation avec la matrice à voir dans documentation*/}
             delegate: Cellule {
                 value: display
                 state : display
