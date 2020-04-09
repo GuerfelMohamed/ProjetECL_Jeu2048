@@ -43,12 +43,16 @@ int Grille::new_val() const {
     if (qrand()%10 == 9) { return 4;} else {return 2;}
 }
 
+bool Grille::a_gagne() {
+    return cellule_max == 2048;// on peut modofoer ici et diminuet le but
+}
+
 // On crée une nouvelle cellule et nouvelle val
-void Grille::new_cellule() { // Génère une nouvelle cellule
+void Grille::new_cellule() {
     int i, j;
+    int rand; // emplacement random pour la nouvelle cellule
     int liste_cellules_libres[taille_grille*taille_grille][2]; // Liste des coordonnées des emplacements libres pour une nouvelle cellule (au maximum le nombre de cellules)
     int l = 0; //nbr cellules vides
-    int rand; // emplacement random pour la nouvelle cellule
 
     for(i = 0; i < taille_grille; i++) {
         for(j = 0; j < taille_grille; j++) {
@@ -121,4 +125,26 @@ void Grille::charger_historique_grille(){
     }
 
 
+}
+
+// initialisation du jeu pour commencer à jouer (utile pour les boutons fait)
+void Grille::debut_jeu() {
+    memset(grl, 0, sizeof(grl));
+    memset(grille_historique, 0, sizeof(grille_historique)); //On reinitialise la valeur de l'historique
+    memset(score_historique, 0, sizeof(score_historique)); //On reinitialise les scores liés a l'historique
+    historique_index = -1; //On reinitialise l'index de l'historique
+//////////////////Pour gerer le meilleur sscore/////////////////////////////
+    if(score > best_score){ //On ne met à jour le score que si le score courant est supérieur au score précedant
+        best_score = score;
+        emit chgt_best_score();
+    }
+    score = 0;
+    emit chgt_score();
+
+
+    cellule_max = 0;
+    // On fait apparaître deux cellules comme dans l'otiginal
+    new_cellule();
+    new_cellule();
+    enregistrer_historique();
 }
