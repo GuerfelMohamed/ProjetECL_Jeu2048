@@ -2,4 +2,6 @@
 
 modelgrille::modelgrille(QObject *parent) :
     QAbstractListModel(parent)
-{}
+{
+
+}

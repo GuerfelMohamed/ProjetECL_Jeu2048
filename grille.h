@@ -59,11 +59,11 @@ private:
     void new_cellule(); // Créer une nouvelle cellule
 
     bool move(int direction); // mouvement avec 0 pour haut, 1 pour gauche, 2 pour bas, 3 pour droite
-    void rot_droite(); //Fait une rotation vers la droite car similitudedans les mvts
+    void tournerDroite(); ///Cette fonction permet de faire des rotations dans le sens trigonometrique///
     bool tout_bouger_haut(); // Gère tout ce qui concerne le mouvement vers le haut : déplacements et fusions
     bool mouvement(int array[]); // Effectue le mouvement d'une colonne (dans la array), et retourne false s'il n'y a aucun mouvement
 
-    int future_position(int array[], const int pos, const int stop) const; // Donne la future position de la cellule en position pos
+    int positionSuivante(int array[], const int pos, const int stop) const; ///Cette fonction permet de connaitre la position suivante d'un tuile///
     bool tuilesEgaux() const; ////Cette fonction permet de savoir si deux tuiles sont adjacents sont égaux ou pas dans le but de savoir si le jeu est fini///
     int compterCasesVides() const; ///Cette fonction permet de déterminer le nombre de case vide pour savoir si les jeu est fini ou pas///
 };

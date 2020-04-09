@@ -184,16 +184,73 @@ bool Grille::finJeu() {
         return false;
     }
 
-    rot_droite(); // Ceci permet de verifier selon l'autre direction
+    tournerDroite(); // Ceci permet de verifier selon l'autre direction
     if (tuilesEgaux()) {
-        rot_droite();
-        rot_droite();
-        rot_droite();// Permet de remettre les tuiles dans le bon sens
+        tournerDroite();
+        tournerDroite();
+        tournerDroite();// Permet de remettre les tuiles dans le bon sens
         return false;
     }
-    rot_droite();
-    rot_droite();
-    rot_droite();// Permet de remettre les tuiles dans le bon sens
+    tournerDroite();
+    tournerDroite();
+    tournerDroite();// Permet de remettre les tuiles dans le bon sens
     return true;
+}
+
+
+///Cette fonction permet de connaitre la position suivante d'un tuile///
+int Grille::positionSuivante(int colonne[], const int position, const int stop) const {
+
+    int fut_pos; // la future position su tuile
+    if (position == 0) {//Si nous sommes dans les bords alors on reste dans les bords
+        return position;
+    }
+    //dans cette boucle, on cherche la futur position d'un tuile en cherchant la position vide la plus éloigné du tuile dans la direction et le sens du mouvement
+    for (fut_pos = position - 1; fut_pos >= 0; fut_pos--) {
+        if (colonne[fut_pos] != 0) { //Si la case contient un tuile
+            if (colonne[fut_pos] != colonne[position]) { // Et si la valeur de la tuile est differente de celle de la tuile presente
+                return fut_pos + 1; // Alors on s'arret avant cette tuile
+            }
+            //Par contre si les deux tuiles sont de meme valeurs alors on revoie la cette position
+            return fut_pos;
+        } else { // Mais si la case ne contient pas de tuile
+            if (fut_pos == stop) { // Et qu'on a atteint les bords
+                return fut_pos; //alors on renvoi la position courante
+            }
+        }
+    }
+    return position; // Enfin si la case la plus proche contient un tuile alors on renvoi la position données en entrée
+}
+
+
+
+///Cette fonction permet de faire des rotations dans le sens trigonometrique///
+void Grille::tournerDroite() {
+    int i, j;
+
+    //declaration de la grille temporaire par allocation dynamique
+    int** grille_temp = new int*[taille_grille];
+    for(i = 0; i<taille_grille; i++){
+        grille_temp[i] = new int[taille_grille];
+    }
+
+    //initialisation de la grille temporaire
+    for(i = 0; i<taille_grille; i++){
+        for(j = 0; j<taille_grille; j++){
+            grille_temp[i][j] = grl[i][j];
+        }
+    }
+    //Rotation de la grille
+    for(i = 0; i<taille_grille; i++){
+        for(j = 0; j<taille_grille; j++){
+            grl[j][i] = grille_temp[i][taille_grille-j-1];
+        }
+    }
+
+    //supression de la grille temporaire
+    for(i = 0; i<taille_grille; i++){
+        delete[] grille_temp[i];
+    }
+    delete[] grille_temp;
 }
 

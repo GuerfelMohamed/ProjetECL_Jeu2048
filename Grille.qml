@@ -1,7 +1,5 @@
 import QtQuick 2.0
 
-// https://doc.qt.io/qt-5/qml-qtquick-gridview.html
-// https://doc.qt.io/qt-5/qml-qtquick-grid.html
 
 Rectangle {
 
