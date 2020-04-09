@@ -22,7 +22,7 @@ public:
     int get_score() const; // Donne le score
     int get_best_score() const ;////////// pour le meilleur score/////////////
 
-    bool finJeu(); // Retourne vrai si le joueur est bloqué (auquel cas il perd)
+    bool finJeu(); ///ici il s'agit de la fonction qui est tout le temps appelé pour savoir si le jeu est fini ou pas en fonction du nombre nombre de case vide et des tuiles adjacents et égaux///
     bool a_gagne(); // Retourne vrai si le joueur a gagne
 
 
@@ -64,8 +64,8 @@ private:
     bool mouvement(int array[]); // Effectue le mouvement d'une colonne (dans la array), et retourne false s'il n'y a aucun mouvement
 
     int future_position(int array[], const int pos, const int stop) const; // Donne la future position de la cellule en position pos
-    bool deux_egaux() const; //si deux cellules adjacentes sont égaes+rot-> le jeu n'est pas encore fini
-    int nb_cases_vides() const; // Compte le nombre de cellules vides
+    bool tuilesEgaux() const; ////Cette fonction permet de savoir si deux tuiles sont adjacents sont égaux ou pas dans le but de savoir si le jeu est fini///
+    int compterCasesVides() const; ///Cette fonction permet de déterminer le nombre de case vide pour savoir si les jeu est fini ou pas///
 };
 
 #endif // GRILLE_H

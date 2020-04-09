@@ -148,3 +148,52 @@ void Grille::debut_jeu() {
     new_cellule();
     enregistrer_historique();
 }
+
+///Cette fonction permet de savoir si deux tuiles sont adjacents sont égaux ou pas dans le but de savoir si le jeu est fini///
+bool Grille::tuilesEgaux() const {
+    int i, j;
+    for (i = 0; i < taille_grille; i++) {
+        for (j = 0; j < taille_grille - 1; j++) {
+            if (grl[i][j+1] == grl[i][j]) return true; //Dés que deux cases sont égaux on arret l'iteration et on retourne true
+        }
+    }
+    return false; //S'il n'y a aucune égalité alors on retourne false
+}
+
+
+///Cette fonction permet de déterminer le nombre de case vide pour savoir si les jeu est fini ou pas///
+int Grille::compterCasesVides() const {
+    int i, j;
+    int nb_cases_vides = 0;
+    for (i = 0; i < taille_grille; i++) {
+        for (j = 0; j < taille_grille; j++) {
+            if (grl[i][j] == 0) { //Une case vide est une case dont le chiffre est 0 donc cela nous permet de détecter les cases vides
+                nb_cases_vides++; //A chaque fois qu'une case est vide on incremente le nombre de de case vides
+            }
+        }
+    }
+    return nb_cases_vides; //En fin on retourne le nombre trouvé
+}
+
+///ici il s'agit de la fonction qui est tout le temps appelé pour savoir si le jeu est fini ou pas en fonction du nombre nombre de case vide et des tuiles adjacents et égaux///
+bool Grille::finJeu() {
+    if (compterCasesVides() > 0) { // S'il reste des cases vides alors le jeu n'est pas fni
+        return false;
+    }
+    if (tuilesEgaux()) { // Oubien même s'il ne reste plus de case vide mais si deux tuiles égaux sont adjecents alors le jeu n'est pas encore fini
+        return false;
+    }
+
+    rot_droite(); // Ceci permet de verifier selon l'autre direction
+    if (tuilesEgaux()) {
+        rot_droite();
+        rot_droite();
+        rot_droite();// Permet de remettre les tuiles dans le bon sens
+        return false;
+    }
+    rot_droite();
+    rot_droite();
+    rot_droite();// Permet de remettre les tuiles dans le bon sens
+    return true;
+}
+
