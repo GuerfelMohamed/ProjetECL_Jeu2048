@@ -37,3 +37,9 @@ void Grille::setTaille(int taille){
     taille_grille=taille;
 }
 
+
+// nouvelle valeur pour la nouvelle cellule en respectant la loi de probabilite
+int Grille::new_val() const {
+    if (qrand()%10 == 9) { return 4;} else {return 2;}
+}
+
