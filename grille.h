@@ -11,8 +11,6 @@ class Grille : public QObject {
 public:
     explicit Grille(QObject *parent = 0);
 
-    void afficher() const; // affichage de la matrice dans la console
-
     bool mvtH(); // Mouvement vers le haut
     bool mvtD(); // Mouvement vers la droite
     bool mvtB(); // Mouvement vers le bas
@@ -59,7 +57,9 @@ private:
     void new_cellule(); // Créer une nouvelle cellule
 
     bool move(int direction); // mouvement avec 0 pour haut, 1 pour gauche, 2 pour bas, 3 pour droite
-    void tournerDroite(); ///Cette fonction permet de faire des rotations dans le sens trigonometrique///
+    void tournerDroite(); /////Fait une rotation vers la droite car similitudedans les mvts (sens trig négative)///
+                        /// [[a00,a01];         devient     [[a01,a11];
+                        ///  [a10,a11]]                      [a00,a10]]
     bool tout_bouger_haut(); // Gère tout ce qui concerne le mouvement vers le haut : déplacements et fusions
     bool mouvement(int array[]); // Effectue le mouvement d'une colonne (dans la array), et retourne false s'il n'y a aucun mouvement
 
