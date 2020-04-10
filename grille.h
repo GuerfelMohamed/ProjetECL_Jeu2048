@@ -51,15 +51,13 @@ private:
     int cellule_max; //Pour le tester gagnant si 2048 ou autre
 
 
-
     void init_rand(); // aléatoir
     int new_val() const; // donner une nouvelle valeur de cellule (0.1-> 4 et 0.9-> 2: regle internet)
     void new_cellule(); // Créer une nouvelle cellule
 
-    bool move(int direction); // mouvement avec 0 pour haut, 1 pour gauche, 2 pour bas, 3 pour droite
-    void tournerDroite(); /////Fait une rotation vers la droite car similitudedans les mvts (sens trig négative)///
-                        /// [[a00,a01];         devient     [[a01,a11];
-                        ///  [a10,a11]]                      [a00,a10]]
+    bool seDeplacer(int sens); ///Cette fonction permet de se deplacer dans une direction et un sens donnees en fonction du parametre qui lui est passe///
+                               /// 0 pour le haut, 1 pour gauche, 2 pour le bas, 3 pour la droite///
+    void tournerDroite(); /////Cette fonction permet de faire des rotations dans le sens trigonometrique///
     bool tout_bouger_haut(); // Gère tout ce qui concerne le mouvement vers le haut : déplacements et fusions
     bool mouvement(int array[]); // Effectue le mouvement d'une colonne (dans la array), et retourne false s'il n'y a aucun mouvement
 

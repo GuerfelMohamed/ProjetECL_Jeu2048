@@ -224,7 +224,7 @@ int Grille::positionSuivante(int colonne[], const int position, const int stop) 
 
 
 
-///Cette fonction permet de faire des rotations de -pi/2 ///
+///Cette fonction permet de faire des rotations dans le sens trigonometrique ///
 void Grille::tournerDroite() {
     int i, j;
 
@@ -254,3 +254,29 @@ void Grille::tournerDroite() {
     delete[] grille_temp;
 }
 
+
+///Cette fonction permet de se deplacer dans une direction et un sens donnees en fonction du parametre qui lui est passe///
+/// 0 pour le haut, 1 pour gauche, 2 pour le bas, 3 pour la droite///
+bool Grille::seDeplacer(int sens) {
+    enregistrer_historique(); //On enregistre d'abord l'état courant du jeu avant d'effectuer le mouvement
+    bool mouvementEffectue = false;
+
+    int i;
+    for(i = 0; i < sens; i++) {
+        tournerDroite(); // On tourne à droite le nombre necessaire de fois pour que le sens devient le haut
+    }
+    mouvementEffectue = tout_bouger_haut(); // On fait monter les tuiles vers le haut
+    for(i = sens; i < 4; i++) {
+        tournerDroite(); // on tourne autant de fois que necessaire pour retrouver le bon ordre
+    }
+
+    if (mouvementEffectue) {//si le mouvement a été effectué avec succes
+        new_cellule();  //alors on crée une nouvelle tuile
+        emit mouvement_fait(); //Puis on notifie que le mouvement est effectuer pour la mise a jour de l'interface graphique
+    }
+    if(a_gagne() || finJeu()) { //Si aprés le mouvement on se rend compte que le jeu est terminé
+        emit fin_ou_gagne(); //alors on notifie que le jeu est fini
+        return false;
+    }
+    return mouvementEffectue;
+}
