@@ -224,7 +224,7 @@ int Grille::positionSuivante(int colonne[], const int position, const int stop) 
 
 
 
-///Cette fonction permet de faire des rotations dans le sens trigonometrique///
+///Cette fonction permet de faire des rotations de -pi/2 ///
 void Grille::tournerDroite() {
     int i, j;
 
