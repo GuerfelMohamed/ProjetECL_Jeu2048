@@ -58,7 +58,7 @@ private:
     bool seDeplacer(int sens); ///Cette fonction permet de se deplacer dans une direction et un sens donnees en fonction du parametre qui lui est passe///
                                /// 0 pour le haut, 1 pour gauche, 2 pour le bas, 3 pour la droite///
     void tournerDroite(); /////Cette fonction permet de faire des rotations dans le sens trigonometrique///
-    bool tout_bouger_haut(); // Gère tout ce qui concerne le mouvement vers le haut : déplacements et fusions
+    bool deplacerToutLesTuilesEnHaut(); ///Cette fonction permet de deplacer tous les tuiles vers le haut///
     bool mouvement(int array[]); // Effectue le mouvement d'une colonne (dans la array), et retourne false s'il n'y a aucun mouvement
 
     int positionSuivante(int array[], const int pos, const int stop) const; ///Cette fonction permet de connaitre la position suivante d'un tuile///

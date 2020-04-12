@@ -265,7 +265,7 @@ bool Grille::seDeplacer(int sens) {
     for(i = 0; i < sens; i++) {
         tournerDroite(); // On tourne à droite le nombre necessaire de fois pour que le sens devient le haut
     }
-    mouvementEffectue = tout_bouger_haut(); // On fait monter les tuiles vers le haut
+    mouvementEffectue = deplacerToutLesTuilesEnHaut(); // On fait monter les tuiles vers le haut
     for(i = sens; i < 4; i++) {
         tournerDroite(); // on tourne autant de fois que necessaire pour retrouver le bon ordre
     }
@@ -300,4 +300,18 @@ bool Grille::seDeplacerBas() {
 /// Se déplacer vers la droite///
 bool Grille::seDeplacerDroite() {
     return seDeplacer(3);
+}
+
+
+///Cette fonction permet de deplacer tous les tuiles vers le haut///
+bool Grille::deplacerToutLesTuilesEnHaut() {
+    if (a_gagne() || finJeu()) {//si le jeu est fini on retourne false
+        return false;
+    }
+    bool mouvementEffectue = false;
+    int x;
+    for (x = 0; x < taille_grille; x++) {
+        mouvementEffectue |= mouvement(grl[x]); // On fait monter les tuiles de chaque colonne vers le haut
+    }
+    return mouvementEffectue;
 }
