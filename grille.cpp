@@ -184,16 +184,16 @@ bool Grille::finJeu() {
         return false;
     }
 
-    tournerDroite(); // Ceci permet de verifier selon l'autre direction
+    tournerGauche(); // Ceci permet de verifier selon l'autre direction
     if (tuilesEgaux()) {
-        tournerDroite();
-        tournerDroite();
-        tournerDroite();// Permet de remettre les tuiles dans le bon sens
+        tournerGauche();
+        tournerGauche();
+        tournerGauche();// Permet de remettre les tuiles dans le bon sens
         return false;
     }
-    tournerDroite();
-    tournerDroite();
-    tournerDroite();// Permet de remettre les tuiles dans le bon sens
+    tournerGauche();
+    tournerGauche();
+    tournerGauche();// Permet de remettre les tuiles dans le bon sens
     return true;
 }
 
@@ -225,7 +225,7 @@ int Grille::positionSuivante(int colonne[], const int position, const int stop) 
 
 
 ///Cette fonction permet de faire des rotations dans le sens trigonometrique ///
-void Grille::tournerDroite() {
+void Grille::tournerGauche() {
     int i, j;
 
     //declaration de la grille temporaire par allocation dynamique
@@ -263,11 +263,11 @@ bool Grille::seDeplacer(int sens) {
 
     int i;
     for(i = 0; i < sens; i++) {
-        tournerDroite(); // On tourne à droite le nombre necessaire de fois pour que le sens devient le haut
+        tournerGauche(); // On tourne à gauche le nombre necessaire de fois pour que le sens devient le haut
     }
     mouvementEffectue = deplacerToutLesTuilesEnHaut(); // On fait monter les tuiles vers le haut
     for(i = sens; i < 4; i++) {
-        tournerDroite(); // on tourne autant de fois que necessaire pour retrouver le bon ordre
+        tournerGauche(); // on tourne autant de fois que necessaire pour retrouver le bon ordre
     }
 
     if (mouvementEffectue) {//si le mouvement a été effectué avec succes

@@ -57,7 +57,7 @@ private:
 
     bool seDeplacer(int sens); ///Cette fonction permet de se deplacer dans une direction et un sens donnees en fonction du parametre qui lui est passe///
                                /// 0 pour le haut, 1 pour gauche, 2 pour le bas, 3 pour la droite///
-    void tournerDroite(); /////Cette fonction permet de faire des rotations dans le sens trigonometrique///
+    void tournerGauche(); /////Cette fonction permet de faire des rotations dans le sens trigonometrique///
     bool deplacerToutLesTuilesEnHaut(); ///Cette fonction permet de deplacer tous les tuiles vers le haut///
     bool monterColonne(int array[]); /// Cette fonction permet de faire monter une colonne de la grille vers le haut ///
 
