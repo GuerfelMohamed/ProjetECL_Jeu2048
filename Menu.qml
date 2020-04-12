@@ -145,7 +145,7 @@ Item {
         y: 325
         width: 120
         height: 70
-        text: qsTr("NOUVELLE\n    PARTIE")
+        text: qsTr("NOUVELLE PARTIE")
         onClicked:{
             modelgrille.nouvelle_partie();
         }
