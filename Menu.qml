@@ -147,7 +147,7 @@ Item {
         y: 325
         width: 120
         height: 70
-        text: qsTr("NOUVELLE PARTIE")
+        text: qsTr("REJOUER")
         onClicked:{
             modelgrille.nouvelle_partie();
         }
