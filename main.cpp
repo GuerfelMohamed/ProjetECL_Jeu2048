@@ -19,7 +19,7 @@ int main(int argc, char *argv[])
             QCoreApplication::exit(-1);
     }, Qt::QueuedConnection);
 
-    engine.rootContext()->setContextProperty("modelgrille", &model);
+    engine.rootContext()->setContextProperty("modelgrille", &model);// use model as property in qml under the name "modelgrille"
 
     engine.load(url);
 

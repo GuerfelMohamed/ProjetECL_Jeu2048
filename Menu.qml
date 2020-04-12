@@ -28,6 +28,7 @@ Item {
         width: 138
         height: 79
         color: "#ffffff"
+        radius: 10
         anchors.rightMargin: 20
 
         Text {
@@ -60,6 +61,7 @@ Item {
         width: 138
         height: 79
         color: "#ffffff"
+        radius: 10
         anchors.rightMargin: 20
 
         Text {
