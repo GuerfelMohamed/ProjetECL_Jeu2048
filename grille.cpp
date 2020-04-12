@@ -336,7 +336,7 @@ bool Grille::monterColonne(int col[]) {
                     valeur_fusion = col[fut_pos] + col[position]; // On calcule la somme les valeurs
                     score += valeur_fusion; // On rajoute cette valeur au score
                     emit chgt_score(); // On signale le changement de score
-                    cellule_max = max(cellule_max, valeur_fusion); // On emt à jour si nécessaire la valeur maximale de cellule
+                    cellule_max = max(cellule_max, valeur_fusion); // On met à jour si nécessaire la valeur maximale de cellule
                 }
                 col[fut_pos] += col[position]; // On met à jour la valeur dans la nouvelle position (avec fusion si nécessaire)
                 col[position] = 0; // La position d'où elle vient est vide : on le met à 0
