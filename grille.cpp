@@ -311,7 +311,39 @@ bool Grille::deplacerToutLesTuilesEnHaut() {
     bool mouvementEffectue = false;
     int x;
     for (x = 0; x < taille_grille; x++) {
-        mouvementEffectue |= mouvement(grl[x]); // On fait monter les tuiles de chaque colonne vers le haut
+        mouvementEffectue |= monterColonne(grl[x]); // On fait monter les tuiles de chaque colonne vers le haut
     }
     return mouvementEffectue;
+}
+
+
+/// Cette fonction permet de faire monter une colonne de la grille vers le haut ///
+bool Grille::monterColonne(int col[]) {
+    bool peut_bouger = false;
+    int position, fut_pos, stop = 0;
+    // position parcoura les positions des cellules dans la colonne
+    // fut_pos indique quelle est la position que la cellule aura après le mouvement
+    // stop est une valeur de contrôle, à ne pas dépasser (utile dans "future_position")
+
+    int valeur_fusion; // Donne la nouvelle valeur après fusion entre deux cellules
+
+    for (position = 0; position < taille_grille; position++) { // On parcoure les positions
+        if (col[position] != 0) { //Cas où on n'est pas tout en haut (car alors, aucun mouvement n'est possible, elle est à l'extrémité
+            fut_pos = positionSuivante(col, position, stop); // Donne la future position de la cellule en mouvement
+            if (fut_pos != position) { // Si il y a effectivement un mouvement (sinon, rien à faire)
+                if (col[fut_pos] != 0) { // Dans le cas où la cellule va à l'extrémité, c'est tout bon, il n'y a rien à faire. Sinon :
+                    stop = fut_pos + 1; // Pour contrôler qu'on ne chevauche pas les cellules
+                    valeur_fusion = col[fut_pos] + col[position]; // On calcule la somme les valeurs
+                    score += valeur_fusion; // On rajoute cette valeur au score
+                    emit chgt_score(); // On signale le changement de score
+                    cellule_max = max(cellule_max, valeur_fusion); // On emt à jour si nécessaire la valeur maximale de cellule
+                }
+                col[fut_pos] += col[position]; // On met à jour la valeur dans la nouvelle position (avec fusion si nécessaire)
+                col[position] = 0; // La position d'où elle vient est vide : on le met à 0
+                peut_bouger = true; // On a effectivement bougé
+            }
+        }
+    }
+
+    return peut_bouger;
 }

@@ -59,7 +59,7 @@ private:
                                /// 0 pour le haut, 1 pour gauche, 2 pour le bas, 3 pour la droite///
     void tournerDroite(); /////Cette fonction permet de faire des rotations dans le sens trigonometrique///
     bool deplacerToutLesTuilesEnHaut(); ///Cette fonction permet de deplacer tous les tuiles vers le haut///
-    bool mouvement(int array[]); // Effectue le mouvement d'une colonne (dans la array), et retourne false s'il n'y a aucun mouvement
+    bool monterColonne(int array[]); /// Cette fonction permet de faire monter une colonne de la grille vers le haut ///
 
     int positionSuivante(int array[], const int pos, const int stop) const; ///Cette fonction permet de connaitre la position suivante d'un tuile///
     bool tuilesEgaux() const; ////Cette fonction permet de savoir si deux tuiles sont adjacents sont égaux ou pas dans le but de savoir si le jeu est fini///
