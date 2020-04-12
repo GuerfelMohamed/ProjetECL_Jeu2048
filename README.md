@@ -2,7 +2,7 @@
 
 ECL: ELC A-11 Programmation des interfaces graphiques en C++
 
-![Image de jeu](https://github.com/GuerfelMohamed/ProjetECL_Jeu2048/2048.png)
+![Image de jeu](https://github.com/GuerfelMohamed/ProjetECL_Jeu2048/blob/master/2048.png)
 
 # Installation
 
