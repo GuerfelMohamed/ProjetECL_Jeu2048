@@ -3,6 +3,11 @@
 modelgrille::modelgrille(QObject *parent) :
     QAbstractListModel(parent)
 {
+    // établir une connection entre les signales emit par la grille et le modèle
+    connect(&grille, &Grille::mouvement_fait, this, &modelgrille::mise_a_jour);// si signele mouvement_fait emit par la grille, alors l'execution de mise_a_jour()
+    connect(&grille, &Grille::chgt_score, this, &modelgrille::chgt_score);
+    connect(&grille, &Grille::chgt_best_score, this, &modelgrille::chgt_best_score);
+    connect(&grille, &Grille::fin_ou_gagne, this, &modelgrille::fin_ou_gagne);
 
 }
 
