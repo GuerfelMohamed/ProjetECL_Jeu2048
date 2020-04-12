@@ -280,3 +280,24 @@ bool Grille::seDeplacer(int sens) {
     }
     return mouvementEffectue;
 }
+
+
+ /// Se deplacer vers le haut ///
+bool Grille::seDeplacerHaut() {
+    return seDeplacer(0);
+}
+
+/// Se déplacer vers la gauche///
+bool Grille::seDeplacerGauche() {
+    return seDeplacer(1);
+}
+
+/// Se déplacer vers le bas///
+bool Grille::seDeplacerBas() {
+    return seDeplacer(2);
+}
+
+/// Se déplacer vers la droite///
+bool Grille::seDeplacerDroite() {
+    return seDeplacer(3);
+}

@@ -11,10 +11,10 @@ class Grille : public QObject {
 public:
     explicit Grille(QObject *parent = 0);
 
-    bool mvtH(); // Mouvement vers le haut
-    bool mvtD(); // Mouvement vers la droite
-    bool mvtB(); // Mouvement vers le bas
-    bool mvtG(); // Mouvement vers la gauche
+    bool seDeplacerHaut(); /// Se deplacer vers le haut ///
+    bool seDeplacerGauche(); /// Se déplacer vers la gauche///
+    bool seDeplacerBas(); /// Se déplacer vers le bas///
+    bool seDeplacerDroite(); /// Se déplacer vers la droite///
 
     int getval(const int x, const int y) const; // Obtenir la valeur de la cellule (x,y)
     int get_score() const; // Donne le score

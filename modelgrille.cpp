@@ -83,16 +83,16 @@ void modelgrille::nouvelle_partie(){
     //emit fin_ou_gagne();
 }
 void modelgrille::mvtH(){
-    grille.mvtH();
+    grille.seDeplacerHaut();
 }
 void modelgrille::mvtB(){
-    grille.mvtB();
+    grille.seDeplacerBas();
 }
 void modelgrille::mvtG(){
-    grille.mvtG();
+    grille.seDeplacerGauche();
 }
 void modelgrille::mvtD(){
-    grille.mvtD();
+    grille.seDeplacerDroite();
 }
 
 
