@@ -2,6 +2,8 @@
 
 ECL: ELC A-11 Programmation des interfaces graphiques en C++
 
+![Image de jeu](https://github.com/GuerfelMohamed/ProjetECL_Jeu2048/2048.png)
+
 # Installation
 
 Pour lancer le programme en utilisant Qt Creator, suivez les étapes suivantes :
